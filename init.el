@@ -57,9 +57,6 @@
 (setq auto-save-list-file-name nil)
 
 
-
-;(setq-default scheme-program-name   "/usr/bin/mit-scheme")     ;; Need to install mit-scheme
-;(setq-default scheme-program-name   "/usr/bin/chicken-csi")    ;; Need to install chicken
 (setq-default scheme-program-name   "/usr/bin/mzscheme")        ;; Need to install racket
 
 
@@ -73,7 +70,6 @@
 
 (load-config-file "custom-file.el")
 (load-config-file "org-config.el")
-;;(load-config-file "exwm-config.el")
 
 
 ;; Load the theme
@@ -90,40 +86,6 @@
 ;; Delight
 (use-package delight
   :ensure t)
-
-
-;;(use-package modus-themes
-;;  :ensure                         ; omit this to use the built-in themes
-;;  :init
-;;  ;; Add all your customizations prior to loading the themes
-;;  (setq modus-themes-italic-constructs t
-;;        modus-themes-bold-constructs nil
-;;        modus-themes-region '(bg-only no-extend))
-;;
-;;  ;; Load the theme files before enabling a theme (else you get an error).
-;;  (modus-themes-load-themes)
-;;  :config
-;;  ;; Load the theme of your choice:
-;;  (modus-themes-load-operandi) ;; OR (modus-themes-load-vivendi)
-;;  :bind ("<f5>" . modus-themes-toggle))
-
-
-
-
-;;;; Switch-window
-;;(use-package switch-window
-;;  :ensure t
-;;  :config
-;;  (setq switch-window-input-style 'minibuffer)
-;;  (setq switch-window-ancrease 4)
-;;  (setq switch-window-threshold 2)
-;;  (setq switch-window-shortcut-style 'qwerty)
-;;  (setq switch-window-qwerty-shortcuts
-;;        '("a" "s" "d" "f" "j" "k" "l"))
-;;  :bind
-;;  ([remap other-window] . switch-window)
-;;  )
-
 
 ;; Buffer moveq
 (use-package buffer-move
@@ -231,7 +193,7 @@
   :defer t
   :init
   ; (setq inferior-lisp-program "/usr/bin/sbcl")     ;; Need to install sbcl
-  (setq inferior-lisp-program "/usr/bin/clisp")     ;; Need to install clisp
+  (setq inferior-lisp-program "/usr/bin/clisp")      ;; Need to install clisp
   :config
     (slime-setup '(slime-fancy slime-company))
   :hook
@@ -396,8 +358,8 @@
  (flyspell-mode t))
 
 ;TODO ispell
-;TODOOO   HTML and JS
-;TODOOOO  Theme
+;TODOO   HTML and JS
+;TODOOO  Theme
 
 (provide 'init)
 ;;; init.el ends here
