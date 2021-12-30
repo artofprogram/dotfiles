@@ -1,7 +1,7 @@
 ;;; Package -- Summary
 ;;  The simple init file for Emacs 27.2
 ;;; Commentary:
-;;  Verision 0.1
+;;  Verision 0.0.1
 
 ;;; Code:
 (defconst hm/default-font-size 142) ;; Set default font size
