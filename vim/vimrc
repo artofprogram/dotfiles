@@ -1,0 +1,130 @@
+"Install vim-plug if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-plug'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'vim-airline/vim-airline'
+
+"colorschemes
+Plug 'sickill/vim-monokai'
+Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+
+" All of your Plugins must be added before the following line
+call plug#end()
+
+
+
+let skip_defaults_vim=1
+
+set nocompatible
+"activate line numbers
+set number
+
+"turn info in tray on even if default
+set ruler
+
+"tabs are the devil
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smartindent
+set smarttab
+
+"Включить автоотступы
+set autoindent
+
+"easier to see characters when `set paste` is on
+set listchars=tab:→\ ,eol:↲,nbsp:␣,space:·,trail:·,extends:⟩,precedes:⟨
+
+"enough for line numbers + gutter within 80 
+
+set textwidth=80
+
+"more risky, but cleaner
+set nobackup
+set noswapfile
+set nowritebackup
+
+"keep the terminal title updated
+set laststatus=0
+set icon
+
+"center the cursor always on the screen
+set scrolloff=999
+
+"highlight search hits, remember `:noh` to clear 
+set hlsearch
+set incsearch
+set linebreak
+
+"avoid most of the 'Hit Enter ...' messages
+set shortmess=aoOtI
+
+"prevents truncated yanks, deletes, etc.
+set viminfo='20,<1000,s1000
+
+"not a fan of bracket matching or folding
+set noshowmatch
+set foldmethod=manual
+
+"stop complaints about switching buffer with changes
+set hidden
+
+"command history
+set history=1000
+
+"here because plugins and stuff need it
+syntax enable
+
+"mappings
+
+map <C-n> :NERDTreeToggle<CR>
+map <F2>  :set list!<CR>
+map <F3>  :set cursorline!<CR>
+map <F4>  :set relativenumber!<CR>
+
+
+" The UI
+
+colorscheme dracula
+set cursorline
+
+"hi highlight  cterm=NONE ctermbg=NONE ctermfg=blue
+
+set background=dark
+" set the prefered colours, pick one line here only.
+" dark grey, better you can get if you don't support 256 colours
+
+hi CursorLine   cterm=NONE ctermbg=8 ctermfg=NONE
+ "light grey, no 256 colors
+hi CursorLine   cterm=NONE ctermbg=7 ctermfg=NONE
+ "dark redish
+hi CursorLine   cterm=NONE ctermbg=52 ctermfg=NONE
+ "dark bluish
+hi CursorLine   cterm=NONE ctermbg=17 ctermfg=NONE
+ "very light grey
+hi CursorLine   cterm=NONE ctermbg=254 ctermfg=NONE
+ "yelowish
+hi CursorLine   cterm=NONE ctermbg=229 ctermfg=NONE
+" almost black
+hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
+
+
+
+
+
